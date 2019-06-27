@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+	<view id="sale_margin_sale_order" model="SaleOrder" >
+            <xpath expr="//group[@name='sale_total']" position="after">
+                <group name="sale_margin_grp">
+                    <field name="margin" groups="base.group_user"/>
+                </group>
+            </xpath>
+        </view>
+	<view id="sale_margin_sale_order_line" model="SaleOrder" >
+            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+                <field name="purchase_price" groups="base.group_user"/>
+            </xpath>
+        </view>
+	<view id="sale_margin_sale_order_line_form" model="SaleOrder" >
+           <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
+                <field name="purchase_price" groups="base.group_user"/>
+            </xpath>
+        </view>
+    </data>
+</hexya>
